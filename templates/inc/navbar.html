@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="navbar-nav col-12">
+        <a class="nav-link active" href="{% url 'App1:home' %}">Home</a>
+        {% if request.user.is_authenticated %}
+        <a class="nav-link active" target="_blank" href="{% url 'admin:index' %}">Admin</a>
+        <a class="nav-link active" href="{% url 'App1:tickets' %}">Tickets</a>
+        <a class="nav-link active" href="{% url 'accounts:logout' %}?next={{request.path}}">logout</a>
+        <p class="nav-link active ml-auto">Hi, {{ request.user.first_name }}</p>
+        {% else %}
+        <a class="nav-link active" href="{% url 'accounts:login' %}?next={{request.path}}">login</a>
+        {% endif %}
+    </div>
+</nav>

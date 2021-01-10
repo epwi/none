@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="post">
+	{% csrf_token %}
+	{{ form.username }}
+    {% for error in form.username.errors %}
+        <p style="color: red;">{{ error }}</p>
+    {% endfor %}
+	<br>
+	{{ form.password }}
+	{% for error in form.username.errors %}
+        <p style="color: red;">{{ error }}</p>
+    {% endfor %}
+	<br>
+	{{ form.captcha }}
+	{% for error in form.captcha.errors %}
+        <p style="color: red;">{{ error }}</p>
+    {% endfor %}
+	<br><br>
+	<input type="submit" value="Login" class="btn btn-primary">
+</form>
+
+{% endblock %}

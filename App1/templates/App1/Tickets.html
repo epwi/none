@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title-meta %}Tickets{% endblock %}
+
+{% block content %}
+
+{% for ticket in tickets %}
+<a href="{{ ticket.get_absolute_url }}" ><p>{{ ticket.sender }} - {{ ticket.created|date }}</p></a>
+<p>Title : {{ ticket.title }}</p>
+<hr>
+{% endfor %}
+
+{% endblock %}
