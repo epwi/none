@@ -1,5 +1,6 @@
-*.sqlite3
-.env
-__pycache__/
+migrations/
 .venv/
 .git/
+__pycache__/
+*.sqlite3
+.env
